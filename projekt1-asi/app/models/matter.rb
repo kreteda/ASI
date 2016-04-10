@@ -1,0 +1,12 @@
+class Matter < ActiveRecord::Base
+belongs_to :user
+
+  # ensure that a user_id is present
+  validates :user_id, presence: true
+
+  # ensure that title is present and at least 10 chars long
+  validates :title, length: { minimum: 3 }, presence: true
+
+  # ensure the url is present, and respects the URL format for http/https
+  validates :description, length: { minimum: 10 }, presence: true
+end

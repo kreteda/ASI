@@ -1,0 +1,6 @@
+class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable,
+         :rememberable, :validatable
+  has_many :matters to app/models/user.rb
+  belongs_to :user to app/models/user.rb
+end

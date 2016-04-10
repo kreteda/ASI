@@ -1,7 +1,6 @@
 Projekt1Asi::Application.routes.draw do
-  get "site/index"
 resources :matters
- 
+  resources :profiles, only: [:index, :show]
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
