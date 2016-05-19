@@ -1,0 +1,28 @@
+<% if current_user %>
+  <h2>Latest Tasks</h2>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>Task</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= link_to task.title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  <div class="panel">
+    <h1>Get started today!</h1>
+    <p>A simple app to keep in one place all your tasks to do. </p> 
+    <pr>It makes you remember about them before the dead lines!.</p>
+    <%= link_to "Get started today", new_user_registration_path, :class => "button button-large" %>
+  </div>
+
+
+<% end %>
